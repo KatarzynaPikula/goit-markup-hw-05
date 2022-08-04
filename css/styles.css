@@ -52,8 +52,25 @@ li {
 
 	flex-direction: row;
 }
+
+.active::after {
+	position: relative;
+	bottom: -26px;
+	content: "";
+	display: flex;
+	width: 100%;
+	height: 4px;
+
+	background: #2196f3;
+	border-radius: 2px;
+
+	text-transform: uppercase;
+}
+
 .top-bar:hover {
 	color: var(--active-color);
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .all-contacts {
 	display: flex;
@@ -97,8 +114,9 @@ li {
 .contact-links-top-mail:active {
 	color: var(--active-color);
 	fill: var(--active-color);
-
 	text-decoration: none;
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact-links-top-tel:hover,
 .contact-links-top-tel:focus,
@@ -106,6 +124,8 @@ li {
 	color: var(--active-color);
 	fill: var(--active-color);
 	text-decoration: none;
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-links {
@@ -120,6 +140,8 @@ li {
 }
 .contact-links:hover {
 	color: var(--active-color);
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-banner {
@@ -138,7 +160,7 @@ li {
 
 	text-align: center;
 
-	background: #2f303a
+	background: #2f303a 40%
 		url(https://raw.githubusercontent.com/KatarzynaPikula/goit-markup-hw-04/main/images/Img-bck.jpg);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
@@ -163,6 +185,8 @@ button:active,
 button:focus {
 	color: var(--second-color, white);
 	background-color: var(--active-color);
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-main-page {
@@ -213,11 +237,15 @@ button:focus {
 	color: var(--second-color);
 	box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
 		0px 2px 2px rgba(0, 0, 0, 0.12);
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .product-card {
 	width: 370px;
-	height: 404px;
+
 	margin: 15px;
+	position: relative;
+	overflow: hidden;
 }
 
 .product-card p {
@@ -230,10 +258,75 @@ button:focus {
 	border-left: 1px solid #eeeeee;
 	border-right: 1px solid #eeeeee;
 }
+
+.product-card:hover {
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+		1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.img {
+	width: 370px;
+	position: relative;
+	overflow: hidden;
+}
+
 .product-card img {
 	width: 370px;
 	height: 294px;
 	display: block;
+}
+
+.overlay {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 294px;
+	background-color: rgba(33, 150, 243, 0.9);
+	transform: translate(0%, 150%);
+	transition: transform 250ms linear;
+	z-index: 2;
+}
+.overlay p {
+	padding: 49px 45px 49px 24px;
+	margin: 0;
+	font-size: 18px;
+	line-height: 1.56;
+	letter-spacing: 0.03em;
+	color: var(--second-color);
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+	letter-spacing: 0.03em;
+	z-index: 2;
+}
+
+.product-card:hover .overlay {
+	transform: translate(0%, 0%);
+	z-index: 2;
+}
+.panel-name {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+	padding-top: 20px;
+	line-height: 36px;
+	letter-spacing: 0.06em;
+	color: var(--first-color);
+	z-index: 5;
+}
+
+.panel-content {
+	font-style: normal;
+	font-weight: 400;
+	padding-top: 4px;
+	padding-bottom: 20px;
+	font-size: 16px;
+	line-height: 30px;
+	letter-spacing: 0.03em;
+	color: var(--descr-color);
+	z-index: 5;
 }
 
 .portfolio {
@@ -295,6 +388,7 @@ ul {
 	text-align: center;
 	letter-spacing: 0.03em;
 	color: var(--first-color);
+	z-index: 2;
 }
 .work_photo {
 	border: 0px;
@@ -303,17 +397,37 @@ ul {
 	border: 0px;
 }
 .about-company {
-	font-size: 36px;
-	font-weight: 700;
-	font-family: "Roboto";
-	text-align: center;
-
-	line-height: 1.17;
+	margin: 0px;
+	padding: 0px;
 }
+.about-company-box {
+	position: relative;
+}
+
+.about-company-label p {
+	position: absolute;
+	bottom: 8px;
+
+	margin: 0px;
+	width: 100%;
+	height: 70px;
+	background-color: rgba(47, 48, 58, 0.8);
+	color: var(--second-color);
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 16px;
+	letter-spacing: 0.03em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+}
+
 .page-list {
 	list-style-type: none;
 	display: flex;
-
 	gap: 30px;
 }
 .workers {
@@ -357,6 +471,8 @@ ul {
 .clients-list-container:hover {
 	fill: var(--active-color);
 	border: 1px solid #2196f3;
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team {
@@ -472,27 +588,8 @@ ul {
 .footer-contact-mail:hover,
 .footer-contact-tel:hover {
 	color: var(--active-color);
-}
-
-.panel-name {
-	font-style: normal;
-	font-weight: 700;
-	font-size: 18px;
-	padding-top: 20px;
-	line-height: 36px;
-	letter-spacing: 0.06em;
-	color: var(--first-color);
-}
-
-.panel-content {
-	font-style: normal;
-	font-weight: 400;
-	padding-top: 4px;
-	padding-bottom: 20px;
-	font-size: 16px;
-	line-height: 30px;
-	letter-spacing: 0.03em;
-	color: var(--descr-color);
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header {
@@ -530,6 +627,8 @@ ul {
 }
 .svg-loremi:focus {
 	fill: var(--second-b-color);
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .svg-contacts {
@@ -537,9 +636,13 @@ ul {
 }
 .svg-contacts:hover {
 	fill: var(--active-color);
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .svg-contacts:focus {
 	fill: var(--active-color);
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .svg-socialmedia-container {
 	border: 0px;
@@ -570,11 +673,15 @@ ul {
 	fill: var(--second-color);
 	border-radius: 50%;
 	background-color: var(--active-color);
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .svg-socialmedia-container:focus {
 	fill: var(--second-color);
 	background-color: var(--active-color);
 	border-radius: 50%;
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .svg-socialmedia-container:active {
 	fill: var(--second-color);
@@ -620,10 +727,14 @@ ul {
 .footer-social-icon:hover {
 	border-radius: 50%;
 	background: var(--active-color);
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-icon:focus {
 	border-radius: 50%;
 	background: var(--active-color);
+	transition-duration: 250ms;
+	transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-envelope {
@@ -634,4 +745,62 @@ ul {
 .icon-smartphone {
 	padding-right: 10px;
 	align-items: center;
+}
+.backdrop {
+	position: fixed;
+	width: 100%;
+	height: 1024px;
+	left: 0px;
+	top: 0px;
+	transition: opacity 260ms linear, visibility 260ms ease-in-out;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 528px;
+	min-height: 581px;
+	transform: translate(-50%, -50%);
+	background-color: var(--second-color);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+		0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	z-index: 9;
+}
+
+.backdrop {
+	transition: opacity 250ms linear;
+	transform: scale(1);
+	height: 100%;
+}
+.close-button {
+	position: absolute;
+	width: 11px;
+	height: 11px;
+	right: 8px;
+	top: 8px;
+}
+.is-hidden {
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+}
+.modal-button {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	background-color: var(--white);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+}
+.modal-button:hover {
+	border: 1px solid var(--blue);
+	cursor: pointer;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 250ms;
 }
