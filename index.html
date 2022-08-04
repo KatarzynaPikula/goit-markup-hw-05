@@ -30,9 +30,9 @@
 						</h1>
 						<nav>
 							<ul class="nav-links">
-								<li><a class="top-bar">Agencja</a></li>
-								<li>
-									<a class="top-bar" href="portfolio.html "
+								<li class="active"><a class="top-bar" href="index.html">Agencja</a></li>
+								<li >
+									<a class="top-bar" href="portfolio.html"
 										>Portfolio</a
 									>
 								</li>
@@ -94,7 +94,7 @@
 							EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU
 						</p>
 
-						<button type="button" class="btn-main-page">
+						<button type="button" class="btn-main-page" data-modal-open>
 							Zamów usługę
 						</button>
 					</div>
@@ -180,7 +180,7 @@
 					<h2 class="h2">Czym się zajmujemy</h2>
 					<div class="about-company">
 						<ul class="page-list">
-							<li>
+							<li class="about-company-box">
 								<img
 									class="work_photo"
 									src="https://raw.githubusercontent.com/KatarzynaPikula/goit-markup-hw-01/main/images/1.jpg"
@@ -188,26 +188,33 @@
 									width="370"
 									height="294"
 								/>
+								<div class="about-company-label">
+									<p>APLIKACJE KOMPUTEROWE</p>
+								</div>
 							</li>
 
-							<li>
+							<li class="about-company-box">
 								<img
 									class="work_photo"
 									src="https://raw.githubusercontent.com/KatarzynaPikula/goit-markup-hw-01/main/images/2.jpg"
 									alt="cweb-ui-designers-are-developing-application-smartphones-team-creators-is-working-interface-mobile-phones"
 									width="370"
 									height="294"
-								/>
+								/><div class="about-company-label">
+									<p>APLIKACJE MOBILNE</p>
+								</div>
 							</li>
 
-							<li>
+							<li class="about-company-box">
 								<img
 									class="work_photo"
 									src="https://raw.githubusercontent.com/KatarzynaPikula/goit-markup-hw-01/main/images/3.jpg"
 									alt="creative-artist-web-design-with-working-colour-selection-graphic-tablet"
 									width="370"
 									height="294"
-								/>
+								/><div class="about-company-label">
+									<p>ROZWIĄZANIA GRAFICZNE</p>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -607,7 +614,7 @@
 					<div class="container">
 						<div class="footer-location">
 						<div class="ul-footer">
-					
+					<ul>
 					<li class="footer-nav">
 						<a class="logo"
 							><span class="logo_color">Web</span><span class="logo-color2">Studio</span></a
@@ -690,5 +697,15 @@
 				</div>
 			</section>
 		</footer>
+
+<div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-button" type="button" 
+          <a class="close-button" data-modal-close>X<a></button>
+      
+</div>
+
+
+		 <script src="./js/modal.js"></script>
 	</body>
 </html>
