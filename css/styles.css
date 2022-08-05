@@ -392,6 +392,7 @@ ul {
 }
 .work_photo {
 	border: 0px;
+	width: 100%;
 }
 .worker_photo {
 	border: 0px;
@@ -402,6 +403,7 @@ ul {
 }
 .about-company-box {
 	position: relative;
+	flex-grow: 1;
 }
 
 .about-company-label p {
@@ -667,6 +669,7 @@ ul {
 	width: 20px;
 	height: 20px;
 	align-items: center;
+	cursor: pointer;
 }
 
 .svg-socialmedia-container:hover {
@@ -675,6 +678,7 @@ ul {
 	background-color: var(--active-color);
 	transition-duration: 250ms;
 	transition: cubic-bezier(0.4, 0, 0.2, 1);
+	cursor: pointer;
 }
 .svg-socialmedia-container:focus {
 	fill: var(--second-color);
@@ -729,6 +733,7 @@ ul {
 	background: var(--active-color);
 	transition-duration: 250ms;
 	transition: cubic-bezier(0.4, 0, 0.2, 1);
+	cursor: pointer;
 }
 .footer-social-icon:focus {
 	border-radius: 50%;
